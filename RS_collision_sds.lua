@@ -7,8 +7,9 @@
   Additionally this program allows the simulation of reaction kinetics in an
   ideally stirred reactor in a standalone mode without SIMION.
 
-  Copyright (C) 2012 - Department of Physical and Theoretical
-  Chemistry of the university of Wuppertal, Germany
+  Copyright (C) 2012 - Physical and Theoretical Chemistry /
+  Institute of Pure and Applied Mass Spectrometry
+  of the University of Wuppertal, Germany
 
 
   This file is part of Monte Carlo Reaction Simulation (RS)
@@ -40,12 +41,13 @@
   in SIMION.
   
   Version of the RS extension:
-  @version: 0.4.4x
+  @version: 0.4.4
  --]]
 simion.workbench_program()
 
+--the SDS model can also be imported from its installation position in the SIMION folder
 local SDS = simion.import('collision_sds.lua', '8.1.1.15.20120807 noinstall')
-assert(rawget(SDS, 'VERSION'), 'please upgrade collision_sds.lua')
+assert(rawget(SDS, '_VERSION'), 'please upgrade collision_sds.lua')
 
 -- import kinetic simulation interface methods
 local RS = simion.import 'RS_simion_interface.lua'

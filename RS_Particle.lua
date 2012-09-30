@@ -7,8 +7,9 @@
   Additionally this program allows the simulation of reaction kinetics in an
   ideally stirred reactor in a standalone mode without SIMION.
 
-  Copyright (C) 2012 - Department of Physical and Theoretical
-  Chemistry of the university of Wuppertal, Germany
+  Copyright (C) 2012 - Physical and Theoretical Chemistry /
+  Institute of Pure and Applied Mass Spectrometry
+  of the University of Wuppertal, Germany
 
 
   This file is part of Monte Carlo Reaction Simulation (RS)
