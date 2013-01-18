@@ -74,6 +74,15 @@ if useProfiler then
 end
 
 
+-- check if all commandline arguments are given,
+-- if not, give usage hint and terminate:
+if #arg ~= 4 then
+	print("Wrong argument number. ")
+	print("Usage information: ")
+	print("lua RS_onePotSimulation.lua nSimSteps maxdt nParticles outputFileName")
+	os.exit()
+end
+
 -- parse the given commandline arguments
 local nSimSteps = tonumber(arg[1])
 local maxdt = tonumber(arg[2])
