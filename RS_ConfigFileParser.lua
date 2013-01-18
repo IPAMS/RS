@@ -123,7 +123,6 @@ function P:parseSubstances(inp)
 	local k = 1
 	for line in string.gmatch(inp, "[%w_-]+[ \t]*%a+[ \t]*[%deE%.%_%-%+]*[ \t]*[%deE._-]*[ \t]*\n")
 	do --match all substance lines
-		print(line)
 		--extract parts of a substance line:
 		local name, sType, optNumber1, optNumber2
 			= string.gmatch(line, "([%w_-]+)[ \t]*(%a+)[ \t]*([%deE%.%_%-%+]*)[ \t]*([%deE._-]*)")()
@@ -316,14 +315,6 @@ end
 --]]
 function P:parse(rateConstantConvFactor)
 	local parts,matches = P:split(self.t,"%[%w+%]")
-	print(parts)
-	for i,v in ipairs(parts) do
-		print(i,v)
-	end
-	print(matches)
-	for i,v in ipairs(matches) do
-		print(i,v)
-	end
 	local substanceTable = P:parseSubstances(parts[2])
 	local reactions = P:parseReactions(parts[3],substanceTable,rateConstantConvFactor)
 	
