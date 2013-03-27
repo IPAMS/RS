@@ -121,7 +121,7 @@ function P:parseSubstances(inp)
 	
 	print("parsing substances...")
 	local k = 1
-	for line in string.gmatch(inp, "[%w_-]+[ \t]*%a+[ \t]*[%deE%.%_%-%+]*[ \t]*[%deE._-]*[ \t]*\n")
+	for line in string.gmatch(inp, "[%w_-]+[ \t]*%a+[ \t]*[%deE%.%_%-%+]*[ \t]*[%deE._-]*[ \t]*\r*\n")
 	do --match all substance lines
 		--extract parts of a substance line:
 		local name, sType, optNumber1, optNumber2
@@ -169,7 +169,6 @@ function P:parseReactions(inp, st, rateConstConvFactor)
 	--for every line of the input...
 	local k = 0
 	for line in string.gmatch(inp,"[^\r\n]+") do 
-		
 		line = line:gsub("[ \t]+","") --remove whitespace (spaces are unnecessary in our case)
 		-- split the line at the ";" symbol (delimiter between reaction definition,
 		-- rate constant and E_a (optional activation energy) )
